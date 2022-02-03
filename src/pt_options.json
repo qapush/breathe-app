@@ -1,0 +1,49 @@
+{
+    "fullScreen": false,
+    "background": {
+        "color": {
+          "value": "#00b4d8"
+      },
+      "opacity": 0,
+        "size": "100px 200px"
+    },
+    "fpsLimit": 40,
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 400
+        }
+      },
+      "color": {
+        "value": ["#fff"]
+      },
+      "opacity": {
+        "value": 0.05,
+        "random": true
+      },
+      "size": {
+        "value": 10,
+        "random": true
+      },
+      "move": {
+        "enable": true,
+          "speed": 1,
+        "direction": "top"
+        
+        },
+        "shape": {
+          "type": "circle"
+      }
+    },
+    "interactivity": {
+      "events": {
+        "onclick": {
+          "enable": false,
+          "mode": "push"
+        },
+        "resize": true
+      }
+    }
+}

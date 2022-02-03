@@ -1,0 +1,60 @@
+.breathe {
+        position: relative;
+        height: 100%;
+        transition-duration: 1s;
+        transition-property: background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+   
+
+    .breathe__inner {
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        transition-duration: 1s;
+        transition-property: background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        h2 {
+            position: absolute;
+            margin-top: 400px;
+        }
+        h3 {
+            position: absolute;
+            margin-bottom: 400px;
+        }
+    
+    
+        .bInner, .bOuter {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+    
+        .bInner {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 20px white;
+        }
+    
+        .bOuter {
+            background-color: rgba(255,255,255,0.2);
+            box-shadow: 0px 0px 20px rgba(255,255,255,0.2);
+        }
+    }
+
+    .ptWrapper{
+        position: absolute;
+        top: 0;
+    }
+
+    #tsparticles {
+        height: 100%;
+    }
+}
