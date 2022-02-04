@@ -48,9 +48,9 @@ export default function App() {
         {menu ? <Menu handleMenu={() => setMenu(!menu)}/> : null }
         <Routes>
           <Route path="/" element={<Modes handleSwitch={handleSwitch} />} />
-          <Route path="/cwiczenie" element={<Breathe params={params} />} />
-          <Route path="/dlaczego" element={<Why />} />
-          <Route path="/instrukcja" element={<Instruction />} />
+          <Route path="cwiczenie" element={<Breathe params={params} />} />
+          <Route path="dlaczego" element={<Why />} />
+          <Route path="instrukcja" element={<Instruction />} />
         </Routes>
       </BrowserRouter>
     </div>
