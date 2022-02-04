@@ -1,3 +1,18 @@
 .app {
     height: 100%;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: plum;
+}
+
+.pt-2 {
+    padding-top: 2rem;
+}
+
+.text {
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0 auto;
+    max-width: 1200px;
 }

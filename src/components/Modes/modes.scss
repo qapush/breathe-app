@@ -1,5 +1,4 @@
 .modes--wrapper {
-  background-color: plum;
   min-height: 100%;
   .modes {
     display: flex;
@@ -7,6 +6,11 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
 
     .mode {
       margin: 10px;

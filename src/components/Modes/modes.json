@@ -1,0 +1,24 @@
+{
+    "modes": [
+        {
+            "title": "4 - 7 - 8",
+            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
+            "mode": "one"
+        },
+        {
+            "title": "4 - 4 - 4",
+            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
+            "mode": "two"
+        },
+        {
+            "title": "1 - 2 - 3",
+            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
+            "mode": "three"
+        },
+        {
+            "title": "5 - 1 - 10",
+            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
+            "mode": "four" 
+        }
+    ]
+}

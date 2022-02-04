@@ -1,0 +1,18 @@
+.navbar {
+    background-color: darkslategray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    .navbar__icon {
+        width: 30px;
+    }
+
+    .menubutton {
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;
+    }
+}
