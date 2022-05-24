@@ -1,5 +1,5 @@
 .navmenu {
-  background-color: darkcyan;
+  background-color: #99E9F2;
   position: absolute;
   width: 100%;
   top: 50px;
@@ -8,12 +8,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 10px 10px rgb(150, 150, 150);
 
   a {
     text-decoration: none;
-    margin-top: 1rem;
+    margin: 2rem auto;
     font-size: 1.3rem;
-    color: khaki;
+    color: #0583F2;
     text-align: center;
 
     &::after {
@@ -23,8 +24,7 @@
       padding: 0px;
       height: 2px;
       width: 10%;
-      background-color: khaki;
-      border-radius: 50%;
+      background-color: #0583F2;
       opacity: 0;
       transition-property: width, opacity;
       transition-duration: 0.3s;
