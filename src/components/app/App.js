@@ -2,8 +2,6 @@ import { useReducer, useState } from "react";
 import Modes from "../Modes/Modes";
 import Breathe from "../breathe/Breathe";
 import Navbar from "../Navbar/Navbar";
-import Why from "../Why/Why";
-import Instruction from "../Instruction/Instruction";
 import Menu from "../Menu/Menu";
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import "./app.scss";
@@ -44,13 +42,17 @@ export default function App() {
     <div className="app">
       
       <BrowserRouter>
-        <Navbar handleMenu={() => setMenu(!menu)} closeMenu={() => setMenu(false)}/>
-        {menu ? <Menu handleMenu={() => setMenu(!menu)}/> : null }
+        <Navbar 
+          handleMenu={() => setMenu(!menu)} 
+          closeMenu={() => setMenu(false)}
+          menu={menu}
+          />
+          {menu ? <Menu handleMenu={() => setMenu(!menu)}/> : null }
         <Routes>
           <Route path="/" element={<Modes handleSwitch={handleSwitch} />} />
           <Route path="cwiczenie" element={<Breathe params={params} />} />
-          <Route path="dlaczego" element={<Why />} />
-          <Route path="instrukcja" element={<Instruction />} />
+          {/* <Route path="dlaczego" element={<Why />} /> */}
+          {/* <Route path="instrukcja" element={<Instruction />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
