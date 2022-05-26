@@ -3,6 +3,9 @@ import Modes from "../Modes/Modes";
 import Breathe from "../breathe/Breathe";
 import Navbar from "../Navbar/Navbar";
 import Menu from "../Menu/Menu";
+import Dlaczego from "../../pages/dlaczego";
+import ZanimZaczniesz from "../../pages/zanimZaczniesz";
+import Postawa from "../../pages/postawa";
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import "./app.scss";
 
@@ -51,8 +54,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Modes handleSwitch={handleSwitch} />} />
           <Route path="cwiczenie" element={<Breathe params={params} />} />
-          {/* <Route path="dlaczego" element={<Why />} /> */}
-          {/* <Route path="instrukcja" element={<Instruction />} /> */}
+          <Route path="dlaczego" element={<Dlaczego />} />
+          <Route path="zanim-zaczniesz" element={<ZanimZaczniesz />} />
+          <Route path="postawa" element={<Postawa />} />
         </Routes>
       </BrowserRouter>
     </div>

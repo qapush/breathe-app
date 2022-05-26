@@ -1,10 +1,12 @@
-import React from 'react';
+import styles from './page.module.scss';
 
-const Why = () => {
+const Why = (props) => {
   return (
     <div className="pt-2 text">
-      <p>I'ts a page</p>
-  </div>
+      <div className={styles.container}>
+      {props.children}
+      </div>
+    </div>
   );
 };
 
