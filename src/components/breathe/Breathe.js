@@ -30,20 +30,20 @@ export default function Breathe({ params }) {
   const springCounterOpacityRef = useSpringRef();
   const springCounterOpacity = useSpring({
     ref: springCounterOpacityRef,
-    opacity: 0,
-    bottom: '150px',
-    from: { opacity: 1, bottom: '0px', },
-    config: { duration: 1000 }
+    
+    to: {transform: 'scale(0.1)', opacity: 0},
+    from: { transform: 'scale(1)', opacity: 1, },
+    config: { duration: 300 }
   })
 
   useChain([springCounterRef,springCounterOpacityRef,springCirlceRef])
 
   return (
     <div className={styles.breathe} style={{ backgroundColor: bgColor }}>
-      <div className={styles.breathe__inner}>
-        <animated.h1 className={styles.counter} style={springCounterOpacity}>
+       <animated.h1 className={styles.counter} style={springCounterOpacity}>
           {springCounter.to(n => n.toFixed(0))}
         </animated.h1>
+      <div className={styles.breathe__inner}>
         {/* <animated.div>{number.to(n => n.toFixed(2))}</animated.div> */}
         <animated.div className={styles.bInner} style={springCirlce}></animated.div>
       </div>
