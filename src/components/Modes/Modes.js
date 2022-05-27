@@ -12,7 +12,7 @@ const Modes = ({ handleSwitch }) => {
         <div className={`${styles.mode} ${styles[mode.mode]}`}>
           <Link to="/cwiczenie" onClick={ () => handleSwitch(mode.mode)} key={i}>
             <div className={styles.title}>{mode.title}</div>
-            <div className="mode__description">
+            <div className={styles.description}>
               {mode.description}
             </div>
           </Link>   
