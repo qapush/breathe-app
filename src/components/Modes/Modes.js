@@ -8,14 +8,15 @@ const Modes = ({ handleSwitch }) => {
   const modes = modesSource.modes
   .map((mode, i) => {
     return(
-      <Link to="/cwiczenie" onClick={ () => handleSwitch(mode.mode)} key={i}>
-        <div className={styles.mode}>
-            <div>{mode.title}</div>
+      
+        <div className={`${styles.mode} ${styles[mode.mode]}`}>
+          <Link to="/cwiczenie" onClick={ () => handleSwitch(mode.mode)} key={i}>
+            <div className={styles.title}>{mode.title}</div>
             <div className="mode__description">
               {mode.description}
             </div>
+          </Link>   
         </div>
-      </Link>
     );
   })
 

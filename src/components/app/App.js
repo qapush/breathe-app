@@ -22,13 +22,13 @@ export default function App() {
 
   const reducer = (state, action) => {
     switch (action.type) {
-      case "one":
-        return { inhale: 4, pause: 7, exhale: 8, bgColor: "indianred" };
-      case "two":
+      case "awake":
+        return { inhale: 6, pause: 0, exhale: 3, bgColor: "indianred" };
+      case "regeneration":
         return { inhale: 4, pause: 4, exhale: 4, bgColor: "darkolivegreen" };
-      case "three":
+      case "relax":
         return { inhale: 1, pause: 2, exhale: 3, bgColor: "navy" };
-      case "four":
+      case "vital":
         return { inhale: 5, pause: 1, exhale: 10, bgColor: "teal" };
       default:
         return { inhale: 4, pause: 7, exhale: 8, bgColor: "pink" };

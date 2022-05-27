@@ -1,9 +1,11 @@
+
+@import '../../styles/_utilities.scss';
+
+
 .wrapper {
   min-height: 100%;
   .modes {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -13,28 +15,48 @@
     }
 
     .mode {
+      display: flex;
+      flex-direction: column;
       margin: 10px;
       padding: 10px;
-      max-width: 200px;
       border-radius: 10px;
+      flex-grow: 1;
+      min-height: 100px;
+
+  
       cursor: pointer;
       transition: box-shadow 260ms ease-in-out;
+      background-repeat: no-repeat;
+      background-size: 150px;
+      background-position: right -75px top 50%;
+      background-color: rgba(230, 230, 230, 0.5);
+
+      &.awake {
+        background-image: url('../../images/bg_awake.svg');
+      }
+      &.regeneration {
+        background-image: url('../../images/bg_regeneration.svg');
+      }
+      &.vital {
+        background-image: url('../../images/bg_vital.svg');
+      }
+      &.relax {
+        background-image: url('../../images/bg_relax.svg');
+      }
+
+        .title {
+          font-weight: bold;
+          margin: 1.2rem 0px 1.2rem 0px;
+        }
 
       &:hover {
         box-shadow: 0px 10px 10px rgb(189, 189, 189);
       }
-
       
-    }
-  }
-
-  @media screen and (max-width: 600px){
-    .modes {
-      padding: 2%;
-
-      .mode {
-        margin: 1%;
+      @include tablet {
+        max-width: 300px;
       }
+      
     }
   }
 }

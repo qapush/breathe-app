@@ -16,12 +16,6 @@
         margin: 2rem auto;
     }
 
-    p {
-        margin: 1rem auto;
-        @include mobile {
-            text-align: justify;
-        }
-    }    
 
     @include desktop {
         max-width: 900px;
@@ -29,6 +23,10 @@
 
     @include tablet {
         max-width: 90%;
+    }
+
+    p {
+        text-align: justify;
     }
 }
 

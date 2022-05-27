@@ -1,24 +1,24 @@
 {
     "modes": [
         {
-            "title": "4 - 7 - 8",
-            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
-            "mode": "one"
+            "title": "Przebudzenie",
+            "description": "Czwiczenie oddechowe na obudzenie rano",
+            "mode": "awake"
         },
         {
-            "title": "4 - 4 - 4",
-            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
-            "mode": "two"
+            "title": "Regeneracja",
+            "description": "Na odnowienie energii po ciężkim dniu",
+            "mode": "regeneration"
         },
         {
-            "title": "1 - 2 - 3",
-            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
-            "mode": "three"
+            "title": "Zrelaksowanie",
+            "description": "Jeśli dopadła sytuacja stresująca, uzyj tej sekwencji",
+            "mode": "relax"
         },
         {
-            "title": "5 - 1 - 10",
-            "description": "I'm baby chartreuse occupy godard, fam jean shorts aesthetic afpitchfork coloring book echo park post-ironic intelligentsia gluten-free helvetica selvage.",
-            "mode": "four" 
+            "title": "Energia życia",
+            "description": "codzienne podtrzymanie poziomu energii zyciowej",
+            "mode": "vital" 
         }
     ]
 }
