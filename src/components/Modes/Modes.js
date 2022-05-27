@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./modes.scss";
+import styles from "./modes.module.scss";
 import modesSource from "./modes.json";
 
 const Modes = ({ handleSwitch }) => {
@@ -9,8 +9,8 @@ const Modes = ({ handleSwitch }) => {
   .map((mode, i) => {
     return(
       <Link to="/cwiczenie" onClick={ () => handleSwitch(mode.mode)} key={i}>
-        <div className="mode">
-            <div className="mode__header">Mode {mode.title}</div>
+        <div className={styles.mode}>
+            <div>{mode.title}</div>
             <div className="mode__description">
               {mode.description}
             </div>
@@ -21,8 +21,8 @@ const Modes = ({ handleSwitch }) => {
 
 
   return (
-    <div className="modes--wrapper">
-      <div className="modes pt-2">
+    <div className={styles.wrapper}>
+      <div className={styles.modes}>
         {modes}
       </div>
     </div>
