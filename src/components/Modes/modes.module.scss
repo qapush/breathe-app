@@ -4,7 +4,6 @@
 
 .wrapper {
   min-height: 100%;
-  padding-top: 2rem;
   .modes {
     display: flex;
     flex-wrap: wrap;
@@ -60,7 +59,11 @@
       }
       
       @include desktop {
-        width: 5%;
+        width: 20%;
+      }
+      
+      @include laptop {
+        width: 20%;
       }
       
       @include tablet {
