@@ -22,8 +22,8 @@ export default function Breathe({ params }) {
   const springCounterRef = useSpringRef();
   const { springCounter } = useSpring({
     ref: springCounterRef,
-    from: { springCounter: 1,},
-    springCounter: 3,
+    from: { springCounter: 3,},
+    springCounter: 1,
     config: { duration: 3000 }
   })
 
