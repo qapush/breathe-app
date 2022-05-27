@@ -1,7 +1,4 @@
 import { useSpring, animated, useSpringRef, useChain } from "@react-spring/web";
-import Particles from "react-tsparticles";
-import ptOptions from "../../pt_options.json";
-import {useState} from 'react'
 import styles from "./breathe.module.scss";
 
 export default function Breathe({ params }) {
