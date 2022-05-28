@@ -1,4 +1,4 @@
-import { useSpring, animated, useSpringRef, useChain } from "@react-spring/web";
+import { useSpring, animated, useSpringRef, useChain, config } from "@react-spring/web";
 import styles from "./breathe.module.scss";
 
 export default function Breathe({ params }) {
@@ -22,32 +22,51 @@ export default function Breathe({ params }) {
   const springCounterRef = useSpringRef();
   const { springCounter } = useSpring({
     ref: springCounterRef,
-    from: { springCounter: 3,},
+    config: {...config.stiff, duration: 4000},
+    from: { springCounter: 5},
     springCounter: 1,
-    config: { duration: 3000 }
   })
 
   const springCounterOpacityRef = useSpringRef();
-  const springCounterOpacity = useSpring({
+  const {x} = useSpring({
     ref: springCounterOpacityRef,
-    
-    to: {transform: 'scale(0.1)', opacity: 0},
-    from: { transform: 'scale(1)', opacity: 1, },
-    config: { duration: 300 }
+    x: 1,
+    from: { x: 0},
+    config: { duration: 500 }
   })
 
   useChain([springCounterRef,springCounterOpacityRef,springCirlceRef])
 
   return (
     <div className={styles.breathe} style={{ backgroundColor: bgColor }}>
-       <animated.h1 className={styles.counter} style={springCounterOpacity}>
-          {springCounter.to(n => n.toFixed(0))}
-        </animated.h1>
+       
+
+        <animated.div className={styles.counter} style={{
+          opacity: x
+          .to({
+            range: [0, 0.5, 1],
+            output: [1, 0, 0],
+          })
+          .to(x => x),
+          bottom: x
+          .to({
+            range: [0, 0.5, 1],
+            output: [0, 0.7, 1],
+          })
+          .to(x => `${x*110}px`),
+        }}>
+          <span>Oddychaj za </span>
+          <animated.span>
+            {springCounter.to(n => n.toFixed(0))}
+          </animated.span>
+        </animated.div>
+
+       
       <div className={styles.breathe__inner}>
-        {/* <animated.div>{number.to(n => n.toFixed(2))}</animated.div> */}
+        
         <animated.div className={styles.bInner} style={springCirlce}></animated.div>
       </div>
-      {/* <Particles params={ptOptions} className={styles.ptWrapper} /> */}
+      
     </div>
   );
 }
