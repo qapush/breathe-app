@@ -1,0 +1,30 @@
+.firstTime {
+    position: relative;
+    background-color: #0000000a;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 2rem; 
+
+    .icon {
+      font-size: 2rem;
+    }
+
+    h2 {
+      color: #0583F2;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .close {
+      color: #0583F2;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
