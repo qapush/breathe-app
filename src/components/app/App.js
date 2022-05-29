@@ -29,7 +29,7 @@ export default function App() {
       case "regeneration":
         return { inhale: 4, pause: 4, exhale: 4, bgColor: "#EEB5BC" };
       case "relax":
-        return { inhale: 1, pause: 99999999, exhale: 0, bgColor: "#BCD7B8" };
+        return { inhale: 4, pause: 7, exhale: 0, bgColor: "#BCD7B8" };
       case "vital":
         return { inhale: 5, pause: 1, exhale: 10, bgColor: "#AFD5EB" };
       default:

@@ -6,6 +6,7 @@ export default function Breathe({ params }) {
   const { inhale, pause, exhale, bgColor } = params;
 
   // Circle animation
+
   const springCirlceRef = useSpringRef();
   const springCirlce = useSpring({
     ref: springCirlceRef,
@@ -22,6 +23,7 @@ export default function Breathe({ params }) {
   });
 
   // Counter animation
+
   const springCounterRef = useSpringRef();
   const { springCounter } = useSpring({
     ref: springCounterRef,
@@ -31,13 +33,24 @@ export default function Breathe({ params }) {
   })
 
   // Counter div animation
+
   const springCounterOpacityRef = useSpringRef();
   const {x} = useSpring({
     ref: springCounterOpacityRef,
     x: 1,
     from: { x: 0},
-    config: { duration: 500 }
+    config: { duration: 500 },
+    onStart: x => springHelperApi.start({pause: false})
   })
+
+  // helper div animation
+  
+  const [springHelper, springHelperApi] = useSpring(() => ({
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 500 },
+    pause: true
+  }))
 
   useChain([springCounterRef,springCounterOpacityRef,springCirlceRef])
 
@@ -50,13 +63,7 @@ export default function Breathe({ params }) {
             range: [0, 0.5, 1],
             output: [1, 0, 0],
           })
-          .to(x => x),
-          bottom: x
-          .to({
-            range: [0, 0.5, 1],
-            output: [0, 0.7, 1],
-          })
-          .to(x => `${x*110}px`),
+          .to(x => x)
         }}>
           <span>Oddychaj za </span>
           <animated.span>
@@ -67,6 +74,7 @@ export default function Breathe({ params }) {
        
       <div className={styles.breathe__inner}>
         
+        <animated.div className={styles.bHelper} style={ springHelper }></animated.div>
         <animated.div className={styles.bInner} style={springCirlce}></animated.div>
       </div>
       
