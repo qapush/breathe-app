@@ -2,8 +2,10 @@ import { useSpring, animated, useSpringRef, useChain, config } from "@react-spri
 import styles from "./breathe.module.scss";
 
 export default function Breathe({ params }) {
+
   const { inhale, pause, exhale, bgColor } = params;
 
+  // Circle animation
   const springCirlceRef = useSpringRef();
   const springCirlce = useSpring({
     ref: springCirlceRef,
@@ -19,6 +21,7 @@ export default function Breathe({ params }) {
     loop: { reset: true },
   });
 
+  // Counter animation
   const springCounterRef = useSpringRef();
   const { springCounter } = useSpring({
     ref: springCounterRef,
@@ -27,6 +30,7 @@ export default function Breathe({ params }) {
     springCounter: 1,
   })
 
+  // Counter div animation
   const springCounterOpacityRef = useSpringRef();
   const {x} = useSpring({
     ref: springCounterOpacityRef,
@@ -40,7 +44,6 @@ export default function Breathe({ params }) {
   return (
     <div className={styles.breathe} style={{ backgroundColor: bgColor }}>
        
-
         <animated.div className={styles.counter} style={{
           opacity: x
           .to({
