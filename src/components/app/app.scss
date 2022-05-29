@@ -1,7 +1,11 @@
+:root {
+    --accent: #0583F2;
+    --main: #0597F2;
+    --bg: #F2F2F2;
+}
+
 .app {
     min-height: 100%;
-    display: grid;
-    grid-template-rows: 50px 1fr;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F2F2F2;
     font-family: 'Manrope', sans-serif;;
@@ -13,10 +17,19 @@
     max-width: 1200px;
 }
 
-:root {
-    --accent: #0583F2;
-    --main: #0597F2;
-    --bg: #F2F2F2;
+.button {
+    background-color: var(--accent);
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: box-shadow 300ms ease-out;
+
+    &:hover {
+        box-shadow: 0px 5px 5px rgb(189, 189, 189);
+    }
+
 }
 
 // * {

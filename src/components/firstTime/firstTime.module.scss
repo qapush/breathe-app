@@ -1,6 +1,6 @@
 .firstTime {
     position: relative;
-    background-color: #0000000a;
+    background-color: #b0d5eb8c;
     border-radius: 5px;
     margin: 10px;
     padding: 2rem; 
@@ -15,16 +15,16 @@
       margin-top: 1rem;
     }
 
-    p {
+    .text {
       margin-bottom: 1rem;
+      max-width: 500px;
     }
 
+    .tutorial {
+      margin: 1rem 2rem 1rem auto;
+    }
     .close {
-      color: #0583F2;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      cursor: pointer;
+      color: var(--accent);
+      cursor: pointer;     
     }
   }

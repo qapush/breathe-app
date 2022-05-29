@@ -2,9 +2,9 @@ import Page from "../components/Page/Page";
 
 import React from "react";
 
-export default function Postawa() {
+export default function Postawa({prev, next}) {
   return (
-    <Page>
+    <Page prev={prev} next={next}>
       <h1>Postawa</h1>
       <p>
       Większość ćwiczeń oddechowych można wykonywać równie efektywnie na leżąco, siedząc na krześle z podparciem czy całkiem płasko na podłodze. Pozycję należy dopasować do swojego poziomu zaawansowania. Najważniejsze aby to w jaki sposób siedzisz, czy leżysz nie utrudniało wykonywania ćwiczeń - nie napinało nadmiernie mięśni, nie odciągało myśli od oddechu. 

@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./modes.module.scss";
 import modesSource from "./modes.json";
 import FirstTime from "../firstTime/firstTime";
 
+
 const Modes = ({ handleSwitch }) => {
+
   
+  const [tutorial, setTutorial] = useState(true);
+
   const modes = modesSource.modes
   .map((mode, i) => {
     return(
@@ -23,8 +27,9 @@ const Modes = ({ handleSwitch }) => {
   
 
   return (
+    
     <div className={styles.wrapper}>
-      <FirstTime/>
+      {tutorial ? <FirstTime setTutorial={setTutorial}/> : null }
       <div className={styles.modes}>
         {modes}
       </div>

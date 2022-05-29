@@ -2,9 +2,9 @@ import Page from "../components/Page/Page";
 
 import React from "react";
 
-export default function ZanimZaczniesz() {
+export default function ZanimZaczniesz({prev, next}) {
   return (
-    <Page>
+    <Page prev={prev} next={next}>
       <h1>Zanim przystąpisz do czwiczeń</h1>
         <ul>
           <li>

@@ -6,12 +6,14 @@ import Menu from "../Menu/Menu";
 import Dlaczego from "../../pages/dlaczego";
 import ZanimZaczniesz from "../../pages/zanimZaczniesz";
 import Postawa from "../../pages/postawa";
-import { BrowserRouter, Routes, Route  } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./app.scss";
 
 export default function App() {
 
-  const [menu, setMenu] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+  
+
 
   const initialState = {
     inhale: 4,
@@ -43,20 +45,19 @@ export default function App() {
 
   return (
     <div className="app">
-      
       <BrowserRouter>
         <Navbar 
-          handleMenu={() => setMenu(!menu)} 
-          closeMenu={() => setMenu(false)}
-          menu={menu}
+          handleMenu={() => setMenuOpened(!menuOpened)} 
+          closeMenu={() => setMenuOpened(false)}
+          menu={menuOpened}
           />
-          {menu ? <Menu handleMenu={() => setMenu(!menu)}/> : null }
+          {menuOpened ? <Menu handleMenu={() => setMenuOpened(!menuOpened)}/> : null }
         <Routes>
           <Route path="/" element={<Modes handleSwitch={handleSwitch} />} />
           <Route path="cwiczenie" element={<Breathe params={params} />} />
-          <Route path="dlaczego" element={<Dlaczego />} />
-          <Route path="zanim-zaczniesz" element={<ZanimZaczniesz />} />
-          <Route path="postawa" element={<Postawa />} />
+          <Route path="dlaczego" element={<Dlaczego next={'zanim-zaczniesz'} />} />
+          <Route path="zanim-zaczniesz" element={<ZanimZaczniesz prev={'dlaczego'} next={'postawa'}/>} />
+          <Route path="postawa" element={<Postawa prev={ 'zanim-zaczniesz'}/>} />
         </Routes>
       </BrowserRouter>
     </div>
