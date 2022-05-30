@@ -32,8 +32,8 @@ export default function App() {
         return { inhale: 4, inhalePause: 4, exhale: 4, exhalePause: 2, bgColor: "#EEB5BC" };
       case "relax":
         return { inhale: 4, inhalePause: 7, exhale: 0, exhalePause: 2, bgColor: "#BCD7B8" };
-      case "vital":
-        return { inhale: 5, inhalePause: 1, exhale: 10, exhalePause: 2, bgColor: "#AFD5EB" };
+      case "custom":
+        return { ...action.payload, bgColor: "#AFD5EB" };
       default:
         return { inhale: 4, inhalePause: 7, exhale: 8, exhalePause: 2, bgColor: "#AFD5EB" };
     }
@@ -42,6 +42,14 @@ export default function App() {
   const handleSwitch = (mode) => {
     dispatch({ type: mode });
   };
+
+  const updateCustomMode = (customSettings) => {
+    console.log(customSettings)
+    dispatch({
+      type: 'custom',
+      payload: customSettings
+    });
+  }
 
   const [params, dispatch] = useReducer(reducer, initialState);
 
@@ -60,7 +68,7 @@ export default function App() {
           <Route path="dlaczego" element={<Dlaczego next={'zanim-zaczniesz'} />} />
           <Route path="zanim-zaczniesz" element={<ZanimZaczniesz prev={'dlaczego'} next={'postawa'}/>} />
           <Route path="postawa" element={<Postawa prev={ 'zanim-zaczniesz'}/>} />
-          <Route path="wlasny" element={<Wlasny/>} />
+          <Route path="wlasny" element={<Wlasny updateCustomMode={ updateCustomMode }/>} />
         </Routes>
       </BrowserRouter>
     </div>

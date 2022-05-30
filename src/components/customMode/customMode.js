@@ -2,7 +2,7 @@ import styles from './custom.module.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function CustomMode() {
+export default function CustomMode({updateCustomMode}) {
 
     const [inhale, setInhale] = useState(4);
     const [inhalePause, setInhalePause] = useState(7);
@@ -88,7 +88,11 @@ export default function CustomMode() {
             >                
             </input>
 
-            <Link to="/cwiczenie" className={`button ${styles.start}`}>
+            <Link
+                to="/cwiczenie"
+                className={`button ${styles.start}`}
+                onClick={ () => updateCustomMode({inhale, inhalePause, exhale, exhalePause})}
+            >
                 Zacznij
             </Link>
            
