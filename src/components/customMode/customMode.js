@@ -88,7 +88,7 @@ export default function CustomMode() {
             >                
             </input>
 
-            <Link to="/cwiczenie" className="button">
+            <Link to="/cwiczenie" className={`button ${styles.start}`}>
                 Zacznij
             </Link>
            
