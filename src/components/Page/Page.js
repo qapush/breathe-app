@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Why = (props) => {  
   return (
-    <div className="pt-2 text">
+    <div className="pt-2">
       <div className={styles.container}>
         {props.children}
         <div className={styles.pagination}>

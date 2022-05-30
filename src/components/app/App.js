@@ -6,6 +6,7 @@ import Menu from "../Menu/Menu";
 import Dlaczego from "../../pages/dlaczego";
 import ZanimZaczniesz from "../../pages/zanimZaczniesz";
 import Postawa from "../../pages/postawa";
+import Wlasny from "../../pages/wlasny";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./app.scss";
 
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="dlaczego" element={<Dlaczego next={'zanim-zaczniesz'} />} />
           <Route path="zanim-zaczniesz" element={<ZanimZaczniesz prev={'dlaczego'} next={'postawa'}/>} />
           <Route path="postawa" element={<Postawa prev={ 'zanim-zaczniesz'}/>} />
+          <Route path="wlasny" element={<Wlasny/>} />
         </Routes>
       </BrowserRouter>
     </div>
