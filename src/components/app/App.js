@@ -17,24 +17,25 @@ export default function App() {
 
 
   const initialState = {
-    inhale: 4,
-    pause: 7,
-    exhale: 8,
+    inhale: 1,
+    inhalePause: 2,
+    exhale: 3,
+    exhalePause: 4,
     bgColor: "indianred",
   };
 
   const reducer = (state, action) => {
     switch (action.type) {
       case "awake":
-        return { inhale: 6, pause: 0, exhale: 3, bgColor: "#F3DAAA" };
+        return { inhale: 6, inhalePause: 0, exhale: 3, exhalePause: 2, bgColor: "#F3DAAA" };
       case "regeneration":
-        return { inhale: 4, pause: 4, exhale: 4, bgColor: "#EEB5BC" };
+        return { inhale: 4, inhalePause: 4, exhale: 4, exhalePause: 2, bgColor: "#EEB5BC" };
       case "relax":
-        return { inhale: 4, pause: 7, exhale: 0, bgColor: "#BCD7B8" };
+        return { inhale: 4, inhalePause: 7, exhale: 0, exhalePause: 2, bgColor: "#BCD7B8" };
       case "vital":
-        return { inhale: 5, pause: 1, exhale: 10, bgColor: "#AFD5EB" };
+        return { inhale: 5, inhalePause: 1, exhale: 10, exhalePause: 2, bgColor: "#AFD5EB" };
       default:
-        return { inhale: 4, pause: 7, exhale: 8, bgColor: "#AFD5EB" };
+        return { inhale: 4, inhalePause: 7, exhale: 8, exhalePause: 2, bgColor: "#AFD5EB" };
     }
   };
 

@@ -1,5 +1,6 @@
 import styles from './custom.module.scss';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CustomMode() {
 
@@ -86,6 +87,10 @@ export default function CustomMode() {
             }}
             >                
             </input>
+
+            <Link to="/cwiczenie" className="button">
+                Zacznij
+            </Link>
            
         </>
     )

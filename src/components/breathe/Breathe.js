@@ -3,21 +3,19 @@ import styles from "./breathe.module.scss";
 
 export default function Breathe({ params }) {
 
-  const { inhale, pause, exhale, bgColor } = params;
+  const { inhale, inhalePause, exhale, exhalePause, bgColor } = params;
 
   // Circle animation
 
   const springCirlceRef = useSpringRef();
   const springCirlce = useSpring({
     ref: springCirlceRef,
-    from: { transform: "scale(0.001)"},
+    from: { transform: "scale(0)"},
     to: [
       { transform: "scale(1)", config: { duration: inhale * 1000 } },
-      {
-        transform: "scale(0)",
-        config: { duration: exhale * 1000 },
-        delay: pause * 1000,
-      },
+      { transform: "scale(1.00001)", config: { duration: inhalePause * 1000 } },
+      { transform: "scale(0)", config: { duration: exhale * 1000 } },
+      { transform: "scale(0.00001)", config: { duration: exhalePause * 1000 } },
     ],
     loop: { reset: true },
   });

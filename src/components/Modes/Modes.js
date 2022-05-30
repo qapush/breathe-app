@@ -11,10 +11,10 @@ const Modes = ({ handleSwitch }) => {
   const [tutorial, setTutorial] = useState(true);
 
   const modes = modesSource.modes
-  .map((mode, i) => {
-    return(
+  .map((mode, i) => {    
+    return (
         <div key={i} className={`${styles.mode} ${styles[mode.mode]}`}>
-          <Link to="/cwiczenie" onClick={ () => handleSwitch(mode.mode)}>
+          <Link to={mode.mode == 'custom' ? '/wlasny' : '/cwiczenie'} onClick={ () => handleSwitch(mode.mode)}>
             <div className={styles.title}>{mode.title}</div>
             <div className={styles.description}>
               {mode.description}
@@ -22,9 +22,7 @@ const Modes = ({ handleSwitch }) => {
           </Link>   
         </div>
     );
-  })
-
-  
+  })  
 
   return (
     

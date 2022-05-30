@@ -16,9 +16,9 @@
             "mode": "relax"
         },
         {
-            "title": "Energia życia",
-            "description": "codzienne podtrzymanie poziomu energii zyciowej",
-            "mode": "vital" 
+            "title": "Własny tryb",
+            "description": "Zaprogramuj własną sekwencję oddychania",
+            "mode": "custom"
         }
     ]
 }
