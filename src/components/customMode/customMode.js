@@ -4,10 +4,16 @@ import { Link } from 'react-router-dom';
 
 export default function CustomMode({updateCustomMode}) {
 
-    const [inhale, setInhale] = useState(4);
-    const [inhalePause, setInhalePause] = useState(7);
-    const [exhale, setExhale] = useState(8);
-    const [exhalePause, setExhalePause] = useState(0);
+    const {lsInhale, lsInhalePause, lsExhale, lsExhalePause, lsBgColor} = JSON.parse(localStorage.getItem('customMode'));
+
+    const [inhale, setInhale] = useState(lsInhale);
+    const [inhalePause, setInhalePause] = useState(lsInhalePause);
+    const [exhale, setExhale] = useState(lsExhale);
+    const [exhalePause, setExhalePause] = useState(lsExhalePause);
+
+
+
+    
 
     return (
         <>
@@ -21,11 +27,10 @@ export default function CustomMode({updateCustomMode}) {
             type="range" 
             id="inhale" 
             name="inhale" 
-            min="0" 
+            min="1" 
             max="30" 
             value={inhale}
                 onChange={e => {
-                    console.log(e.target.value);
                     setInhale(e.target.value)
             }}
             >                
@@ -33,18 +38,17 @@ export default function CustomMode({updateCustomMode}) {
 
             {/* PAUZA PO WDECHU */}
 
-            <label htmlFor="inhale">
-                <h2 className={ styles.partitionName}>Pauza po wydechu: <span>{ inhalePause } sekund</span></h2>
+            <label htmlFor="inhalePause">
+                <h2 className={ styles.partitionName}>Pauza po wdechu: <span>{ inhalePause } sekund</span></h2>
             </label>
             <input 
             type="range" 
-            id="inhale" 
-            name="inhale" 
+            id="inhalePause" 
+            name="inhalePause" 
             min="0" 
             max="30" 
             value={inhalePause}
                 onChange={e => {
-                    console.log(e.target.value);
                     setInhalePause(e.target.value)
             }}
             >                
@@ -52,18 +56,17 @@ export default function CustomMode({updateCustomMode}) {
 
             {/* WYDECH */}
 
-            <label htmlFor="inhale">
+            <label htmlFor="exhale">
                 <h2 className={ styles.partitionName}>Wydech: <span>{ exhale } sekund</span></h2>
             </label>
             <input 
             type="range" 
-            id="inhale" 
-            name="inhale" 
-            min="0" 
+            id="exhale" 
+            name="exhale" 
+            min="1" 
             max="30" 
             value={exhale}
                 onChange={e => {
-                    console.log(e.target.value);
                     setExhale(e.target.value)
             }}
             >                
@@ -71,18 +74,17 @@ export default function CustomMode({updateCustomMode}) {
 
             {/* PAUZA PO WYDECHU */}
 
-            <label htmlFor="inhale">
+            <label htmlFor="exhalePause">
                 <h2 className={ styles.partitionName}>Pauza po wydechu: <span>{ exhalePause } sekund</span></h2>
             </label>
             <input 
             type="range" 
-            id="inhale" 
-            name="inhale" 
+            id="exhalePause" 
+            name="exhalePause" 
             min="0" 
             max="30" 
             value={exhalePause}
                 onChange={e => {
-                    console.log(e.target.value);
                     setExhalePause(e.target.value)
             }}
             >                

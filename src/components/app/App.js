@@ -14,14 +14,21 @@ export default function App() {
 
   const [menuOpened, setMenuOpened] = useState(false);
   
-
+  if( !localStorage.getItem('customMode') ){
+    localStorage.setItem('customMode', JSON.stringify({
+      lsInhale: 1,
+      lsInhalePause: 1,
+      lsExhale: 1,
+      lsExhalePause: 1
+    }))
+  }
 
   const initialState = {
     inhale: 1,
-    inhalePause: 2,
-    exhale: 3,
-    exhalePause: 4,
-    bgColor: "indianred",
+    inhalePause: 1,
+    exhale: 1,
+    exhalePause: 1,
+    bgColor: "#AFD5EB",
   };
 
   const reducer = (state, action) => {
@@ -34,8 +41,8 @@ export default function App() {
         return { inhale: 4, inhalePause: 7, exhale: 0, exhalePause: 2, bgColor: "#BCD7B8" };
       case "custom":
         return { ...action.payload, bgColor: "#AFD5EB" };
-      default:
-        return { inhale: 4, inhalePause: 7, exhale: 8, exhalePause: 2, bgColor: "#AFD5EB" };
+      // default:
+      //   return { inhale: 4, inhalePause: 7, exhale: 8, exhalePause: 2, bgColor: "#AFD5EB" };
     }
   };
 
@@ -44,7 +51,12 @@ export default function App() {
   };
 
   const updateCustomMode = (customSettings) => {
-    console.log(customSettings)
+   localStorage.setItem('customMode', JSON.stringify({
+    lsInhale: customSettings.inhale,
+    lsInhalePause: customSettings.inhalePause,
+    lsExhale: customSettings.exhale,
+    lsExhalePause: customSettings.exhalePause
+   }))
     dispatch({
       type: 'custom',
       payload: customSettings
