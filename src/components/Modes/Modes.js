@@ -14,7 +14,7 @@ const Modes = ({ handleSwitch }) => {
   .map((mode, i) => {    
     return (
         <div key={i} className={`${styles.mode} ${styles[mode.mode]}`}>
-          <Link to={mode.mode == 'custom' ? '/wlasny' : '/cwiczenie'} onClick={ () => handleSwitch(mode.mode)}>
+          <Link to={mode.mode === 'custom' ? '/wlasny' : '/cwiczenie'} onClick={ () => handleSwitch(mode.mode)}>
             <div className={styles.title}>{mode.title}</div>
             <div className={styles.description}>
               {mode.description}
